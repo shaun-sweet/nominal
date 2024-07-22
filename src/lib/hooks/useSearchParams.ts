@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useContext, useMemo, useState } from "react"
+import { SearchParamsContext } from "../context/SearchParamProvider/SearchParamProvider";
 
 
 export interface WorkBookFiltersQueryParams {
@@ -7,8 +8,17 @@ export interface WorkBookFiltersQueryParams {
 }
 
 export const useSearchParams = <T>() => {
+  const searchParamsCtx = useContext(SearchParamsContext);
+
+  if (!searchParamsCtx) {
+    throw new Error(
+      "useSearchParams must be used within a SearchParamsProvider"
+    );
+  }
+
+  const { searchParams, setSearchParams } = searchParamsCtx;
+
   const urlParams = new URLSearchParams(window.location.search)
-  const [searchParams, setSearchParams] = useState(window.location.search)
  
 
   const setNewSearchParams = useCallback((newSearchParams: string) => {
@@ -41,4 +51,4 @@ export const useSearchParams = <T>() => {
   }, [setSearchParam, getSearchParam, removeSearchParam])
   
   return api
-}
+};

@@ -19,7 +19,7 @@ const SideBarCategory = ({
       <Divider className="my-3 border-red-500" />
       <div
         className={cx(
-          "p1 pl-2 uppercase text-xs text-[#717886] font-semibold mb-1"
+          "p1 pl-2 uppercase text-[9px] text-[#717886] font-semibold mb-1"
         )}
       >
         {title}

@@ -54,7 +54,7 @@ export const WorkbookFilters = () => {
   const isHomeSelected = !activeFilter && !activeCategory;
 
   return (
-    <div className="w-44 p-5">
+    <div className="w-44">
       <SideBarMenu.Root>
         <SideBarMenu.Item
           name="Home"
