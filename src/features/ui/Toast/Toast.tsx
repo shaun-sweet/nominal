@@ -106,7 +106,7 @@ const Toast = ({
   return (
     <div className="flex w-96 shadow-md border border-[#DDE1E4] p-4 z-10 bg-white mt-4">
       <div className="flex flex-col">
-        <div className="text-[#2D3744] font-bold">title</div>
+        <div className="text-[#2D3744] font-bold">Toast Title</div>
         <div className="text-xs">{message}</div>
       </div>
       <button
