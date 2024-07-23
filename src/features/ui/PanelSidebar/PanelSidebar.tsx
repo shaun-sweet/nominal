@@ -42,8 +42,6 @@ export const PanelSidebar = () => {
     return expandedOptionPanels[selectedSideBarItem];
   }, [selectedSideBarItem, expandedOptionPanels]);
 
-  console.log({ selectedSideBarItem, expandedOptionPanels });
-
   return (
     <div
       className={cx("flex h-full bg-[#F9FAFB]  border-[#DDE1E4]", {
@@ -76,7 +74,13 @@ export const PanelSidebar = () => {
             </div>
           </div>
         </div>
-        <div className="p-2">panel body</div>
+        <div
+          className={cx("p-2", {
+            hidden: !isSelectedPanelExpanded,
+          })}
+        >
+          panel body
+        </div>
       </div>
 
       <div className="w-10 border-l-[1px] border-[#DDE1E4] p-2">

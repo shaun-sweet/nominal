@@ -2,6 +2,7 @@ import "./tailwind.css";
 import { WorkbookFilters } from "./features/workbooks/WorkbookFilters";
 import { PanelSidebar } from "./features/ui/PanelSidebar";
 import { Workbook } from "./features/workbooks/Workbook";
+import { ToastContainer } from "./features/ui/Toast";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <div className="ml-auto">
         <PanelSidebar />
       </div>
+      <ToastContainer />
     </div>
   );
 }
